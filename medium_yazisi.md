@@ -50,7 +50,7 @@ Random forest'ın feature importance sıralaması da tork (0.33), dönüş hız�
 
 ![Özellik önem sıralaması](grafikler/ozellik_onem_siralamasi.png)
 
-## Dökümantasyonu okumak kod yazmaktan çok kazandırdı
+## dokümantasyonu okumak kod yazmaktan çok kazandırdı
 
 Projenin bana en çok şey öğreten bölümü burası ve neredeyse hiç kod yok. Skoru nasıl yükseltirim diye düşünürken UCI sayfasındaki arıza tanımlarını bir daha okudum. HDF (ısı kaynaklı arıza) tanımı hava ve proses sıcaklığı arasındaki farka bakıyor. PWF (güç kaynaklı arıza) tanımı ise tork ile açısal hızın çarpımından hesaplanan gücün 3500-9000 W aralığının dışına çıkmasına. Yani arızayı belirleyen büyüklükler veri setinde ham halde yok, sütunların birleşiminde saklı. Model bunları kendisi türetmeye çalışıyor, ben hazır verirsem işi kolaylaşır:
 
@@ -88,7 +88,7 @@ n_estimators=100 gibi ayarları şimdiye kadar hocanın derste kullandığı de�
 
 Izgarayı küçük tuttum: n_estimators [100, 200], max_depth [5, 10, None], class_weight [None, "balanced"]. 12 kombinasyon, 5 fold ile 60 model eğitimi demek; bu boyutta hepsini denemek sorun değil. (Izgara büyüseydi kombinasyonların tamamı yerine rastgele bir kısmını deneyen RandomizedSearchCV'ye geçerdim.)
 
-Sonuç beni biraz güldürdü. En iyi parametreler class_weight None, max_depth None, n_estimators 200 çıktı, cv skoru 0.84, test f1 0.855. Yani elle seçtiğim ayarlarla neredeyse aynı, test tahminleri birebir aynı çıktı. 60 model eğiten aramanın getirisi sıfır, on dakikalık dökümantasyon okumanın getirisi 0.19 puan. Bu karşılaştırmayı unutmayacağım.
+Sonuç beni biraz güldürdü. En iyi parametreler class_weight None, max_depth None, n_estimators 200 çıktı, cv skoru 0.84, test f1 0.855. Yani elle seçtiğim ayarlarla neredeyse aynı, test tahminleri birebir aynı çıktı. 60 model eğiten aramanın getirisi sıfır, on dakikalık dokümantasyon okumanın getirisi 0.19 puan. Bu karşılaştırmayı unutmayacağım.
 
 ## XGBoost
 
@@ -114,11 +114,11 @@ shap.summary_plot(shap_values[:, :, 1], X_shap)
 
 ![SHAP özeti](grafikler/shap_ozeti.png)
 
-Feature importance ile aynı isimler öne çıkıyor ama SHAP yön bilgisini de veriyor ve asıl güzelliği bu. Takım aşınmasının yüksek değerleri (kırmızı noktalar) tahmini arıza yönüne itiyor, düşük dönüş hızı da öyle. guc satırında daha ilginç bir desen var: hem çok düşük hem çok yüksek değerler arıza yönüne itiyor. PWF tanımı zaten gücün 3500-9000 W bandının dışına çıkması, yani modelin veriden kendi başına çıkardığı kural dökümantasyondaki tanımla birebir örtüşüyor. sicaklik_farki'nda ise düşük değerler arızaya itiyor, ilk bakışta ters geldi ama HDF tanımı da tam olarak farkın küçülmesine bakıyormuş.
+Feature importance ile aynı isimler öne çıkıyor ama SHAP yön bilgisini de veriyor ve asıl güzelliği bu. Takım aşınmasının yüksek değerleri (kırmızı noktalar) tahmini arıza yönüne itiyor, düşük dönüş hızı da öyle. guc satırında daha ilginç bir desen var: hem çok düşük hem çok yüksek değerler arıza yönüne itiyor. PWF tanımı zaten gücün 3500-9000 W bandının dışına çıkması, yani modelin veriden kendi başına çıkardığı kural dokümantasyondaki tanımla birebir örtüşüyor. sicaklik_farki'nda ise düşük değerler arızaya itiyor, ilk bakışta ters geldi ama HDF tanımı da tam olarak farkın küçülmesine bakıyormuş.
 
 ## Bu projeden elimde kalanlar
 
-Somut olarak şunları öğrendim. Skor çok iyi çıktığında sevinmeden önce "neden bu kadar iyi" diye sormak gerekiyor; benim 0.999'luk accuracy'm veri sızıntısıymış. Dengesiz veride accuracy neredeyse hiçbir şey söylemiyor, recall ve f1 okumayı bu projede öğrendim. En büyük sürpriz ise emeğin dağılımıydı: veri setinin dökümantasyonunu okumak f1'i 0.19 puan yükseltti, grid search hiçbir şey kazandırmadı. Bir de modelin sınırını gördüm: RNF sütunundaki rastgele arızalar sensörlere yansımıyor, onları hiçbir model yakalayamaz.
+Somut olarak şunları öğrendim. Skor çok iyi çıktığında sevinmeden önce "neden bu kadar iyi" diye sormak gerekiyor; benim 0.999'luk accuracy'm veri sızıntısıymış. Dengesiz veride accuracy neredeyse hiçbir şey söylemiyor, recall ve f1 okumayı bu projede öğrendim. En büyük sürpriz ise emeğin dağılımıydı: veri setinin dokümantasyonunu okumak f1'i 0.19 puan yükseltti, grid search hiçbir şey kazandırmadı. Bir de modelin sınırını gördüm: RNF sütunundaki rastgele arızalar sensörlere yansımıyor, onları hiçbir model yakalayamaz.
 
 Eksikler de belli. Karar eşiğini (threshold) hiç oynamadım, 0.5 yerine daha düşük bir eşik recall'u ucuza artırabilirdi. Dengesiz veri konusunu araştırırken adı sık geçen SMOTE gibi örnekleme yöntemlerini de denemedim. PCA'yı düşünüp vazgeçtim, 9 değişkenli veride boyut indirmeye gerek görmedim. Sıradaki deneme muhtemelen threshold ayarı olacak, çünkü üretim senaryosunda 15 kaçan arıza hala çok.
 
