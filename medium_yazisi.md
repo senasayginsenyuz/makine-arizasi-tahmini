@@ -122,6 +122,8 @@ Somut olarak şunları öğrendim. Skor çok iyi çıktığında sevinmeden önc
 
 Eksikler de belli. Karar eşiğini (threshold) hiç oynamadım, 0.5 yerine daha düşük bir eşik recall'u ucuza artırabilirdi. Dengesiz veri konusunu araştırırken adı sık geçen SMOTE gibi örnekleme yöntemlerini de denemedim. PCA'yı düşünüp vazgeçtim, 9 değişkenli veride boyut indirmeye gerek görmedim. Sıradaki deneme muhtemelen threshold ayarı olacak, çünkü üretim senaryosunda 15 kaçan arıza hala çok.
 
+Modeli kendiniz denemek isterseniz küçük bir sayfa hazırladım. Sensör değerlerini oynatınca tahmin anında güncelleniyor, hazır senaryoların hepsi de veri setinden gerçek kayıtlar: https://senasayginsenyuz.com/makine-arizasi-tahmini/demo/
+
 Defterin tamamı ve grafikler GitHub'ımda, sena-makine-arizasi-tahmini klasöründe.
 
 Veri seti: [Kaggle](https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification) ve orijinali [UCI AI4I 2020](https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset)
