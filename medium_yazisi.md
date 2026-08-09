@@ -1,4 +1,4 @@
-# Makine arızasını önceden tahmin edebilir miyiz? İlk kestirimci bakım denemem
+# Makine arızasını önceden tahmin edebilir miyiz?
 
 Türkiye Yapay Zeka Akademisi ile Huawei Student Developers'ın birlikte düzenlediği Veri Bilimi ve Makine Öğrenmesi Bootcamp'inin final ödevi için kendi projemizi yapıp süreci yazmamız istendi. Konu seçerken çok gezinmedim. Üretim sektörüne zaten ilgim vardı ve bir yerde okuduğum bir bilgi aklıma takılmıştı: üretim hattındaki plansız bir duruşun maliyeti, planlı bakımın kat kat üstünde olabiliyor. Madem makineler sensörle dolu, arızayı olmadan önce tahmin etmeyi deneyebilirim dedim. Bunun literatürdeki adı kestirimci bakım, yani predictive maintenance.
 
