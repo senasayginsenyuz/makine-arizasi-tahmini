@@ -4,7 +4,7 @@ TRAI bootcamp final projem: AI4I 2020 veri setiyle makine arızası tahmini (kes
 
 Defter: makine_arizasi_tahmini.ipynb (Google Colab'da yazdım). Grafikler grafikler/ klasöründe, yazının taslağı medium_yazisi.md dosyasında.
 
-Medium yazısı: (yayınlayınca linki buraya ekleyeceğim)
+Medium yazısı: https://medium.com/@senasayginsenyuz/makine-ar%C4%B1zas%C4%B1n%C4%B1-%C3%B6nceden-tahmin-edebilir-miyiz-3fd2a64db690?sharedUserId=senasayginsenyuz
 
 Veri seti: https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
